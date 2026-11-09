@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website portofolio pribadi Abyan Dennis Al Hafidz">
+    <title>Abyan Dennis Al Hafidz | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #050914;
+            color: white;
+            line-height: 1.7;
+        }
+
+        header {
+            background: rgba(5, 9, 20, 0.95);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #123c68;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(
+                135deg,
+                #020617,
+                #0c2345,
+                #075985
+            );
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .profile-icon {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: auto auto 25px;
+            background: linear-gradient(135deg, #0284c7, #020617);
+            border: 4px solid #38bdf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 55px;
+            font-weight: bold;
+            box-shadow: 0 0 30px #0284c788;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(90deg, #0284c7, #2563eb);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 25px #0284c788;
+        }
+
+        section {
+            padding: 75px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 40px;
+            color: #38bdf8;
+        }
+
+        .about {
+            background: #080f1e;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            color: #cbd5e1;
+            font-size: 16px;
+        }
+
+        .info {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            text-align: left;
+        }
+
+        .info div {
+            background: #101d32;
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid #164e78;
+        }
+
+        .info strong {
+            color: #38bdf8;
+        }
+
+        .skills {
+            background: #050914;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #101d32, #071426);
+            border: 1px solid #164e78;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+            box-shadow: 0 5px 25px #0284c733;
+        }
+
+        .card .icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .gallery {
+            background: #080f1e;
+        }
+
+        .gallery-item {
+            background: #101d32;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #164e78;
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+            box-shadow: 0 5px 25px #0284c733;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item h3 {
+            padding: 15px;
+            color: #38bdf8;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #020617, #0c2345);
+            text-align: center;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            background: #020617;
+            text-align: center;
+            padding: 22px;
+            color: #94a3b8;
+            border-top: 1px solid #164e78;
+            font-size: 13px;
+        }
+
+        @media(max-width: 650px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .info {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ABYAN.DEV</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">Profil</a>
+        <a href="#skills">Skill</a>
+        <a href="#gallery">Galeri</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="profile-icon">A</div>
+        <h1>Halo, Saya <span>Abyan Dennis</span></h1>
+        <p>
+            Selamat datang di website portofolio pribadi saya.
+            Saya memiliki minat di bidang teknologi,
+            komputer, bahasa, dan seni menggambar.
+        </p>
+        <a href="#about" class="btn">Kenali Saya</a>
+    </div>
+</section>
+
+<!-- PROFIL -->
+<section class="about" id="about">
+    <h2 class="section-title">Tentang Saya</h2>
+    <div class="about-content">
+        <p>
+            Perkenalkan, nama saya Abyan Dennis Al Hafidz.
+            Saya adalah seseorang yang memiliki semangat
+            untuk terus belajar dan mengembangkan kemampuan.
+            Saya tertarik dengan dunia komputer, teknologi,
+            bahasa, dan seni.
+        </p>
+        <div class="info">
+            <div>
+                <strong>Nama</strong><br>
+                Abyan Dennis Al Hafidz
+            </div>
+            <div>
+                <strong>Email</strong><br>
+                abyandennis@example.com
+            </div>
+            <div>
+                <strong>Domisili</strong><br>
+                Desa Bendo, Ponggok, Blitar
+            </div>
+            <div>
+                <strong>Keahlian</strong><br>
+                Instalasi Software Windows
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILL -->
+<section class="skills" id="skills">
+    <h2 class="section-title">Keahlian Saya</h2>
+    <div class="card-container">
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Windows 7</h3>
+            <p>Memiliki kemampuan instalasi sistem operasi Windows 7.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🖥️</div>
+            <h3>Windows 10</h3>
+            <p>Memiliki kemampuan instalasi sistem operasi Windows 10.</p>
+        </div>
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Software</h3>
+            <p>Tertarik mempelajari instalasi dan pengelolaan software komputer.</p>
+        </div>
+    </div>
+</section>
+
+<!-- HOBI -->
+<section class="about">
+    <h2 class="section-title">Hobi Saya</h2>
+    <div class="card-container">
+        <div class="card">
+            <div class="icon">🌍</div>
+            <h3>Belajar Bahasa</h3>
+            <p>Senang mempelajari bahasa baru dan menambah wawasan.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>Menggambar</h3>
+            <p>Menyalurkan kreativitas melalui seni dan kegiatan menggambar.</p>
+        </div>
+    </div>
+</section>
+
+<!-- GALERI -->
+<section class="gallery" id="gallery">
+    <h2 class="section-title">Galeri Aktivitas</h2>
+    <div class="card-container">
+        <div class="gallery-item">
+            <img src="images/windows7.jpg" alt="Aktivitas instalasi Windows 7">
+            <h3>Instalasi Windows 7</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/windows10.jpg" alt="Aktivitas instalasi Windows 10">
+            <h3>Instalasi Windows 10</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/software.jpg" alt="Aktivitas komputer dan software">
+            <h3>Komputer dan Software</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/drawing.jpg" alt="Hasil karya menggambar">
+            <h3>Hasil Menggambar</h3>
+        </div>
+    </div>
+</section>
+
+<!-- KONTAK -->
+<section class="contact" id="contact">
+    <h2 class="section-title">Hubungi Saya</h2>
+    <p>
+        Terima kasih telah mengunjungi website portofolio saya.
+        Mari saling berbagi ilmu dan pengalaman.
+    </p>
+    <a href="mailto:abyandennis@example.com" class="btn">
+        Kirim Email
+    </a>
+</section>
+
+<footer>
+    <p>© 2026 Abyan Dennis Al Hafidz. All Rights Reserved.</p>
+    <p>Designed with ❤️ and Creativity</p>
+</footer>
+
+</body>
+</html>
